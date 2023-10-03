@@ -64,9 +64,9 @@ attention: les étiquettes (tag) permettent de marquer un commit particulier
 git tag [-a] [-m message] <tagname> [commit]
 Donc pour pousser un tag vers GitHub:
 git push origin <tagname>
-
 5. git push --> envoie les modifications mises en place vers le dépôt distant, je **pousse** les modifications
 6. git status --> permet de voir les changements de mon dossier par rapport à la version du dépôt
     git log --> permet de voir l'ensemble des commits ayant été effectués
-==> Le scénario le plus simple sera donc:
-**git pull --> modifications --> git add/rm --> git commit --> git push
+7. ==> Le scénario le plus simple sera donc:
+**git pull --> modifications --> git add/rm --> git commit**
+**git add . --> git commit -m"message" --> git push --> git status (le point ici signifie j'ajoute le dossier courant où je me trouve)**
