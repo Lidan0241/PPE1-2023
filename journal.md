@@ -70,3 +70,5 @@ git push origin <tagname>
 7. ==> Le scénario le plus simple sera donc:
 **git pull --> modifications --> git add/rm --> git commit**
 **git add . --> git commit -m"message" --> git push --> git status (le point ici signifie j'ajoute le dossier courant où je me trouve)**
+Cloner un repertoire de GitHub: git clone + URL SSH --> test réussi sur GitHub avec répertoire public nommé git_test
+-> N'oublie surtout pas à ajouter "le message" directement après git commit -m sinon une autre page s'affiche
