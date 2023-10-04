@@ -102,4 +102,4 @@ on oublie le changement
 - git revert <commit>
 on annule ce qu'on a fait et on le marque, crée un nouveau commit où les changements sont annulés; 
 
-
+ERREUR ERREUR ERREUR
