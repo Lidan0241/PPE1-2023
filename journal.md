@@ -61,14 +61,45 @@ de Git qui offre un espace de stockage en ligne pour les dépôt Git(mais aussi 
     git rm <file> --> retirer du suivi un fichier
 4. git commit [-m message] --> permet de décrire les changements effectués
 attention: les étiquettes (tag) permettent de marquer un commit particulier
-git tag [-a] [-m message] <tagname> [commit]
+git tag [-a] [-m message] <tagname> [commit] (numéro de chaque commit est affiché sur GitHub)
 Donc pour pousser un tag vers GitHub:
-git push origin <tagname>
+git push origin <tagname> 
 5. git push --> envoie les modifications mises en place vers le dépôt distant, je **pousse** les modifications
 6. git status --> permet de voir les changements de mon dossier par rapport à la version du dépôt
     git log --> permet de voir l'ensemble des commits ayant été effectués
-7. ==> Le scénario le plus simple sera donc:
-**git pull --> modifications --> git add/rm --> git commit**
-**git add . --> git commit -m"message" --> git push --> git status (le point ici signifie j'ajoute le dossier courant où je me trouve)**
-Cloner un repertoire de GitHub: git clone + URL SSH --> test réussi sur GitHub avec répertoire public nommé git_test
--> N'oublie surtout pas à ajouter "le message" directement après git commit -m sinon une autre page s'affiche
+## ==> Le scénario le plus simple sera donc:
+- **git pull --> modifications --> git add/rm --> git commit** 
+- **git add . --> git commit -m"message" --> git push --> git status (le point ici signifie j'ajoute le dossier courant où je me trouve)**
+- **git clone (il faut cloner l'URL SSH mais non HTTPS) --> git push --> git commit --> git status**
+- Cloner un repertoire de GitHub: git clone + URL SSH --> test réussi sur GitHub avec répertoire public nommé git_test
+- -> N'oublie surtout pas à ajouter "le message" directement après git commit -m sinon une autre page s'affiche
+- commande "git tag" montre tous les tags effectués, git show + <tag name> montre le contenu ajouté sur ce tag
+
+# 04 octobre 2023
+# Corriger les erreurs 
+##  2 commandes à utiliser
+- 
+- 
+**Moyens de revenir en arrière**
+- HEAD: représente le commit sur lequel je suis en train de travailler - le commit en cours mais pas les commits déjà synchronisé en ligne; origin->main: version synchronisée; HEAD->main:le commit courant sur ma machine, origin/HEAD: sur GitHub
+- <tag> représente le commit sur lequel j'ai mis un tag
+- ^[N]: 
+- ~[N]: représente l'ascendance directe du commit (linéaire) --> pour ce semestre
+**Défaire**
+**option soft**
+- git reset HEAD~
+--> revient à dernière la version du dépôt et **annule la mise-en-place** (revient à la version précédente avant git commit) 
+- ~ signifie remonter de 1 commit
+- git reset --soft HEAD~
+--> le fichier sera toujours prêt à commiter; n'annule pas la mise-en-place
+- git reset fonctionne sur des **commit entiers**, pas sur des fichiers spécifiques
+**option hard**
+- git reset --hard
+annule le commit, on perd tous les changement qu'on a faits
+**revenir à un commit spécifique**
+- git reset <commit> --> légère différence avec git revert
+on oublie le changement
+- git revert <commit>
+on annule ce qu'on a fait et on le marque, crée un nouveau commit où les changements sont annulés; 
+
+
