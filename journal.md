@@ -1,5 +1,6 @@
 # Journal de Lidan
 # 20 septembre 2023
+
 • L'utilité de GitHub
 
 1. Récupérer les URL, offre un espace de stockage
@@ -85,6 +86,7 @@ git push origin <tagname>
 - <tag> représente le commit sur lequel j'ai mis un tag
 - ^[N]: 
 - ~[N]: représente l'ascendance directe du commit (linéaire) --> pour ce semestre
+
 **Défaire**
 **option soft**
 - git reset HEAD~
@@ -97,8 +99,12 @@ git push origin <tagname>
 - git reset --hard
 annule le commit, on perd tous les changement qu'on a faits
 **revenir à un commit spécifique**
-- git reset <commit> --> légère différence avec git revert
+- git reset <commit> --> légère différence avec git revert;
 on oublie le changement
-- git revert <commit>
-on annule ce qu'on a fait et on le marque, crée un nouveau commit où les changements sont annulés; 
-
+- git revert <commit>; on garde le changement --> creats a new commit with the resulting changes.
+- différence entre reset et revert:
+git revert sert à annuler des changments commités, tandis que git reset HEAD permet d'annulers des changements non commités;
+on annule ce qu'on a fait et on le marque, crée **un nouveau commit** où les changements sont annulés; 
+- git log (--oneline): pour obtenir les derniers changements faits et ses commits (avec tag, l'identifiant SHA, qui est une longue chaîne de lettres et de nombres)
+- git restore: sert à restorer le dernier changement commité et supprimer le changement local non-commité d'après.
+- git checkout: sert à créer des branches ou basculer entre elles. (une branche: en quelque sorte comme créer une copie de mon projet; La branche par défaut dans Git s’appelle master. Cette branche master va se déplacer automatiquement à chaque nouveau commit pour pointer sur le dernier commit effectué tant qu’on reste sur cette branche.)
