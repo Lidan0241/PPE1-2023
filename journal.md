@@ -37,8 +37,8 @@ créer un texte: echo > "nom_du_texte" .txt
 créer un dossier: mkdir "nom_du_dossier"
 supprimer: rmdir 
 supprimer un fichier rm "nom"
-rm -r: supprimer tous les fichiers (irréversible,attention)
-rm -d: supprimer  seulement les fichiers vides
+rm -r: supprimer un repertoire non vide et son contenu(irréversible)
+rm -d: supprimer  seulement les repertoires vides
 manuel: man "nom_de_la_commande"
 head: lit de début d'un fichier
 *tail*: lit la fin d'un fichier
