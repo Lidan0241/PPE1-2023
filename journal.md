@@ -108,3 +108,52 @@ on annule ce qu'on a fait et on le marque, crée **un nouveau commit** où les c
 - git log (--oneline): pour obtenir les derniers changements faits et ses commits (avec tag, l'identifiant SHA, qui est une longue chaîne de lettres et de nombres)
 - git restore: sert à restorer le dernier changement commité et supprimer le changement local non-commité d'après.
 - git checkout: sert à créer des branches ou basculer entre elles. (une branche: en quelque sorte comme créer une copie de mon projet; La branche par défaut dans Git s’appelle master. Cette branche master va se déplacer automatiquement à chaque nouveau commit pour pointer sur le dernier commit effectué tant qu’on reste sur cette branche.)
+
+# 11 octobre 2023
+# Les pipelines
+##  Flux d'entrées et sortie
+- Stdin: l'entrée standard (par défaut le clavier)
+- stdout: la sortie standard (par défaut l'écran)
+- stderr: la sortie d'erreurs standard (par défaut l'écran)
+- < remplace le clavier par le contenu d'un fichier
+- > écrit stdout dans un fichier
+- >> on écrit en ajoutant la sortie à la fin d'un fichier, sinon les chevrons simples écrasent le contenu existant du fichier --> tout recommencer à zéro (à partir de la 2ème fois du chevron faut utiliser double)
+
+## commande bash à lancer
+- wc: affiche nombre de ligne, nombre de mots, nombre de caractères
+- ctrl + D: finir de saisir au clavier
+- wc > nom_fichier: par d'argument; le chevron est une redirection d'entrée et sorti, marque la fin de la commande; il n'est pas capable de faire nom_fichier et puis afficher les infos avec des différents noms de fichiers
+- pipe: |
+- ann: fichier de tabulations, des fichiers tabulaires
+- grep université: retourner toutes les lignes de textes où se trouve "université"
+- wc > output.txt: créer un fichier en envoyant le résultat de wc dessus
+- wc -l: afficher le nombre de lignes ou appraît le motif
+- différence echo et cat:
+echo est pour éditer un texte(formater les résultats), tant dis que cat est seulement pour afficher le contenu d'un fichier.
+- cut: sélectionner des conlonnes; cut -f: extraire des sections spécifiques de chaque ligne d'un fichier donné (colonnes); eg: cut -f 3: con garde la 3ème conlonne et supprimer le reste
+- uniq: supprimer les lignes qui se répètent
+- head: ne prendre que les 10 premières ligne de sorties(pour vérifier si le résultat est correct); head -n 15: afficher les 15 premières lignes
+- sort: trier des lignes (de façon alphabétique); sort -n(de façon numérique)
+
+## Introduction aux scripts
+- format du fichier: bash script.sh
+- ajouter un commentaire: #
+- ajouter un shebang: #!/usr/bin/bash --> si ça ne marche pas, entrer env dans le terminal pour voir la "path" du fichier.sh, dans mon cas le shebang est #!/bin/bash
+- pour voir si un fichier est exécutable: ls -l
+- eg: -rw-r--r--@ 1 lydia  staff  710 13 oct 22:24 output.txt
+ici -rw-r--r- représente les 3 conlonnes des permissions de fichier; 
+1. le premier caractère indique s'il s'agit d'un fichier ordinaire(-) ou d'un répertoire(d) - dans ce cas: ordinaire
+2. rw: les permissions pour le propriétaire du fichier est de lire et écrire, mais pas exécuter.
+3. r--: indique les permissions pour le groupe auquel le fichier appartient; dans ce cas, les nombres ont la permission de lire mais pas modifier ni exécuter
+4. r--: indique la permission pour tous les autres utilisateurs; donc seulement lire;
+- Donc, pour rendre un fichier exécutable: chmod +x nom.sh
+une autre solution: chmod 755 nom.sh
+- pour expliquer le chiffre 755: r(read):4; w(write):2, x(exécuter):1; donc le propriétaire peut read/write/exécuter, groupe et les autres peuvent lire et exécuter.
+- Pour exécuter: ./nom_du_fichier
+
+## Arguments et variables
+- On donne la valeur avec"="(ne mettre pas d'espace)des arguments aux variable $1, $2, $3…
+- créer des nouvelles variables avec des noms explicites: FICHIER_URLS=$1
+- on peut aussi stocker le resultat d'une commande en l'écrivant dans $()
+
+
