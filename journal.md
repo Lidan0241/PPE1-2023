@@ -252,3 +252,7 @@ on a fini
 - sont deux commandes qui vont pouvoir nous permettre de récupérer des pages web sans passer par un navigateur, la différence principale entre les deux commandes et que wget écrit dans un fichier et cURL écrit dans le terminal.
 
 
+## Projet PPE
+https://github.com/valentinefleith/PPE1-Groupe.git
+Les trois langues que nous allons étudier sont le français, l'anglais et le chinois. Je suis en charge pour la partie des corpus du chinois.
+Nous nous sommes mises d'accord pour choisir le mot **"argent"** pour notre projet. Nous avons choisi ce mot nous sommes intéressées de découvrir ses utilisations et ses emplois sur les pages web dans différentes langues.
