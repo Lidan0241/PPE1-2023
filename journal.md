@@ -156,4 +156,99 @@ une autre solution: chmod 755 nom.sh
 - créer des nouvelles variables avec des noms explicites: FICHIER_URLS=$1
 - on peut aussi stocker le resultat d'une commande en l'écrivant dans $()
 
+# 18 octobre 2023
+# Instructions de contrôle
+## Instruction conditionnelles
+- On peut aussi utiliser des expressions régulieres.
+
+```shell
+if condition
+then
+  echo "la condition est valide."
+else
+  echo "la condition est invalide."
+fi
+```
+
+## Conditions possibles 
+- -f fichier: vrai si le fichier existe
+- -d dossier: vrai si le dossier existe
+- -s fichier: vrai si le fichier existe est n'est pas vide
+- -n chaine: vrai si la chaîne n'est pas vide
+- -z : vrai si la chaîne est vide
+- =: identique; !=: différent
+- eq: égal; -ne: différent(not equl); lt: less than; gt: greater than; le: less or equal; ge: greater or equal; example= a -ge b
+
+## Boucle for
+
+```shell
+for ELEMENT in a b c d e
+do
+ expr...(expr est une calculatrice)
+ echo ...
+done
+```
+
+## Boucle while
+
+```shell
+while [condition];
+do
+  echo "continue à boucler";
+done
+```
+- la commande read est souvent utilisée avec WHILE. Démo: 
+
+```shell
+while read -r LINE; do
+echo "la ligne: $LINE"
+if [[ $LINE =∼ ^https?:// ]] then
+echo "ressemble à une URL valide"
+```
+- pour sortir du boulce infini: Ctrl + C
+- seq: séquence de nombre; par example
+
+```shell
+for val in $(seq 3 12)
+do
+  echo "val vaut $val"
+done
+```
+- La sortie sera: val vaut 3, val vaut 4...val vaut 12.
+
+- Différence avec -lt
+
+```shell
+N=0
+while [$N -lt 10]
+do
+  echo "on en est à $N"
+  N=$(expr $N + 1)
+done
+echo "on a fini"
+```
+la sortie sera:
+on en est à 0
+on en est à 1...
+on en est à 9
+on a fini
+-lt exlut le dernier chiffre marqué.
+
+## HTML
+- Hyper Text Markup Language: un langage de balise pour représenter des pages web. Format reconnu par tous les navigateurs; il permet de structurer l'info, enrichir le texte et donner des indications pour interagir avec l'utilisateur.
+
+## Nomenclature des codes HTTP
+- 1xx: information
+- 200: réussite
+- 3xx: redirections
+- 4xx: erreurs du client; 404: la page n'existe plus
+- 5xx: erreurs du serveur; 503: le service est momentanément indisponible
+
+## Lynx
+- Un navigateur web en terminal qui permet de récupérer et afficher sans navigation dans le terminal une page web avec uniquement des textes et des liens
+- aller entre les options : flèche basse, accéder aux options : flèche droite, revenir en arrière : flèche gauche ; touche q → y : sortir du site
+
+## wget et cURL
+- sont deux commandes qui vont pouvoir nous permettre de récupérer des pages web sans passer par un navigateur, la différence principale entre les deux commandes et que wget écrit dans un fichier et cURL écrit dans le terminal.
+
 
