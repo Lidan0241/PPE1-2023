@@ -256,3 +256,6 @@ on a fini
 https://github.com/valentinefleith/PPE1-Groupe.git
 Les trois langues que nous allons étudier sont le français, l'anglais et le chinois. Je suis en charge pour la partie des corpus du chinois.
 Nous nous sommes mises d'accord pour choisir le mot **"argent"** pour notre projet. Nous avons choisi ce mot nous sommes intéressées de découvrir ses utilisations et ses emplois sur les pages web dans différentes langues.
+
+Rendu du projet: 7 janvier
+

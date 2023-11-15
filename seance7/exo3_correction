@@ -1,0 +1,4 @@
+#!/bin/bash
+
+FICHIER="$1"
+bash text2colonne.sh
