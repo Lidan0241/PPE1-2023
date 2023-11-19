@@ -259,3 +259,10 @@ Nous nous sommes mises d'accord pour choisir le mot **"argent"** pour notre proj
 
 Rendu du projet: 7 janvier
 
+# 15 novembre Séance 8
+## HTML
+- Dans les balises head, on devrait mettre <meta charset="UTF-8"> pour la métadonnées de l'encodage.
+- Pour créer un tableau: pour les lignes: <tr>; cellule de l'entête:<th>; ceullule classique <td>
+- Les pages GitHub permettent de créer et déployer un site web lié à un dépôt git. On utilise donc ce qui s'appelle "gh-pages". On crée d'abord un fichier index "index.html" et ensuite on dit à GitHub de transformer un dépôt en site.
+- Le nom de la page web: https://Lidan0241.github.io/PPE1-2023
+- Après chaque push, le site sera mis à jour.
